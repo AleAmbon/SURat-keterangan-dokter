@@ -1,0 +1,9 @@
+.logo-dokter {
+    width: 80px; /* Coba ukuran ini, atau 100px, 120px, dll. */
+    height: auto; /* Penting! Menjaga rasio aspek gambar */
+    border-radius: 50%; /* Jika Anda ingin tetap bulat */
+    display: block;
+    margin: 20px auto;
+    border: 2px solid #007bff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

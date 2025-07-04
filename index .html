@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surat Keterangan Dokter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 850px;
+            margin: 30px auto;
+            padding: 20px;
+            background: linear-gradient(to right, #e6f0ff, #f9f9ff);
+            min-height: 100vh;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 50px;
+            border: none;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 100%;
+            background: linear-gradient(to bottom, #1e88e5, #0d47a1);
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #2193b0, transparent);
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+        }
+        
+        .title {
+            text-align: center;
+        }
+        
+        .title h1 {
+            margin: 0;
+            font-size: 24px;
+            text-transform: uppercase;
+            color: #1565c0;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+            letter-spacing: 1px;
+        }
+        
+        .title p {
+            margin: 5px 0 0;
+            font-size: 14px;
+        }
+        
+        .patient-photo {
+            width: 200px;
+            height: 240px;
+            margin: 30px auto;
+            border: 6px solid white;
+            display: block;
+            object-fit: cover;
+            background-color: #f5f9ff;
+            border-radius: 5px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .patient-photo:hover {
+            transform: scale(1.05) translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+            padding: 0 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group:hover {
+            transform: translateX(5px);
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            font-family: inherit;
+            resize: vertical;
+        }
+        
+        .signature-area {
+            margin-top: 60px;
+            padding: 30px;
+            text-align: right;
+            background: rgba(30, 136, 229, 0.08);
+            border-radius: 12px;
+            position: relative;
+            border: 1px solid rgba(30, 136, 229, 0.2);
+        }
+        
+        .signature-area::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 120px;
+            height: 100%;
+            background: linear-gradient(to left, rgba(30, 136, 229, 0.1), transparent);
+            z-index: -1;
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+        
+        .signature {
+            width: 200px;
+            height: 80px;
+            border-bottom: 1px solid #333;
+            margin-left: auto;
+            margin-bottom: 10px;
+        }
+        
+        .doctor-name {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .stamp {
+            margin-top: 20px;
+            width: 120px;
+            height: 120px;
+            float: right;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+            }
+            .container {
+                box-shadow: none;
+                border: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b48c70c6-4c3d-4411-9f22-ce335668bc4e.png" alt="Logo klinik/rumah sakit dengan warna biru dan putih, bergambar stetoskop dan siluet rumah sakit" class="logo">
+            <div class="title">
+                <h1>surat keterangan dokter</h1>
+                <p>No: .../SKD/.../2023</p>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="patientName">Nama Pasien:</label>
+            <input type="text" id="patientName" style="width: 100%; padding: 10px; border: 1px solid #1565c0; border-radius: 4px; font-size: 16px;">
+        </div>
+        
+        <div class="form-group">
+            <label for="patientAge">Umur:</label>
+            <input type="text" id="patientAge" style="width: 50px; padding: 8px; border: 1px solid #ddd;">
+        </div>
+        
+        <div class="form-group">
+            <label>Foto Pasien:</label>
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ca1ca5d1-b2b7-4f04-a1aa-2ea3bf24275e.png" alt="Pasien dalam pose formal dengan latar belakang putih" class="patient-photo">
+        </div>
+
+        <div class="form-group">
+            <label for="patientAddress">Alamat:</label>
+            <textarea id="patientAddress" style="width: 100%; padding: 8px; border: 1px solid #ddd;"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="patientJob">Pekerjaan:</label>
+            <input type="text" id="patientJob" style="width: 100%; padding: 8px; border: 1px solid #ddd;">
+        </div>
+
+        <div class="form-group">
+            <label for="patientComplaint">Keluhan:</label>
+            <textarea id="patientComplaint" style="width: 100%; padding: 8px; border: 1px solid #ddd;"></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="medicalNotes">Keterangan Medis:</label>
+            <textarea id="medicalNotes">Dengan ini menerangkan bahwa:
+[Nama] yang tercantum di atas, dengan identitas yang dapat dilihat pada foto, adalah benar pasien kami yang telah melakukan pemeriksaan kesehatan di klinik/praktik kami.</textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="diagnosis">Diagnosa:</label>
+            <input type="text" id="diagnosis" style="width: 100%; padding: 8px; border: 1px solid #ddd;">
+        </div>
+        
+        <div class="form-group">
+            <label for="recommendation">Rekomendasi:</label>
+            <textarea id="recommendation">Disarankan untuk:
+1. Istirahat total selama [..] hari
+2. Kontrol kembali tanggal: [..]
+3. Menjalani pengobatan yang telah diberikan dengan teratur
+4. Segera kembali ke dokter jika kondisi tidak membaik</textarea>
+        </div>
+        
+        <div class="signature-area">
+            <div class="signature"></div>
+            <div class="doctor-name">dr. Rahmat Hidayat, Sp.PD</div>
+            <p>SIP: 1234567890123456</p>
+            
+            <img src="mas yat.jpg" alt="Cap dokter dengan latar belakang merah bertuliskan 'PRAKTEK DOKTER' dalam lingkaran" class="stamp">
+        </div>
+    </div>
+    
+    <script>
+        // Fungsi untuk mencetak dokumen
+        function printDocument() {
+            window.print();
+        }
+        
+        // Menambahkan tombol print untuk kemudahan pengguna
+        document.addEventListener('DOMContentLoaded', function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = 'Cetak Surat';
+            printBtn.style.cssText = 'padding: 18px 40px; background: linear-gradient(to right, #2962ff, #1e88e5); color: white; border: none; border-radius: 50px; cursor: pointer; margin: 50px auto; display: block; font-size: 18px; font-weight: bold; box-shadow: 0 8px 20px rgba(41, 98, 255, 0.25); text-transform: uppercase; letter-spacing: 1.5px; transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);';
+            printBtn.onmouseenter = function() { this.style.background = '#0d47a1'; this.style.transform = 'translateY(-2px)'; }
+            printBtn.onmouseleave = function() { this.style.background = '#1565c0'; this.style.transform = 'translateY(0)'; }
+            printBtn.onclick = printDocument;
+            
+            document.querySelector('.container').appendChild(printBtn);
+        });
+    </script>
+</body>
+</html>
+
